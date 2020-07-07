@@ -96,7 +96,11 @@ RUN \
   mkdir -p /gocd-jre && \
   tar -xf /tmp/jre.tar.gz -C /gocd-jre --strip 1 && \
   rm -rf /tmp/jre.tar.gz && \
-  mkdir -p /go-agent /docker-entrypoint.d /go /godata
+  mkdir -p /go-agent /docker-entrypoint.d /go /godata &&\
+  apk add openjdk8 &&\
+  apk add git &&\
+  apk add maven &&\
+  apk add gradle
 
 ADD docker-entrypoint.sh /
 
