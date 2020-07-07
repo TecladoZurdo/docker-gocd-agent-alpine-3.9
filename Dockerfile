@@ -97,7 +97,7 @@ RUN \
   tar -xf /tmp/jre.tar.gz -C /gocd-jre --strip 1 && \
   rm -rf /tmp/jre.tar.gz && \
   mkdir -p /go-agent /docker-entrypoint.d /go /godata &&\
-  apk add openjdk8 &&\
+  apk --no-cached add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community &&\
   apk add git &&\
   apk add maven &&\
   apk add gradle
